@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeApp.Pages.ClimatePage">
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="stackLayout">
         <Label Text="Все о погоде"  VerticalTextAlignment="Center" HorizontalOptions="Center"  FontSize="Title" Padding="30,10,30,10" />
         <Button x:Name="loginButton" 
                     Text="Узнать погоду" 
                     Clicked="get_wether"
+                    CornerRadius="10"/>
+        <Button x:Name="AlarmButton" 
+                    Text="Установить Будильник" 
+                    Clicked="set_alarm"
                     CornerRadius="10"/>
     </StackLayout>
 </ContentPage>
