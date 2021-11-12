@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeApp.AlarmPage">
+    <ContentPage.Content>
+        <StackLayout  x:Name="stackLayout" BackgroundColor="LightGray" Padding="30">
+            <Label  Text="Установить будильник" HorizontalOptions="Center"  FontSize="Large" Margin = "0, 30, 0, 0"/>
+            
+            <Label  Text="Выберите дату" FontSize="Medium" Margin = "0, 30, 0, 0"/>
+            <DatePicker x:Name="datePicker" Format="D" DateSelected="datePicker_DateSelected" TextColor =" Black">
+                <DatePicker.MinimumDate>11/01/2021</DatePicker.MinimumDate>
+                <DatePicker.MaximumDate>11/30/2021</DatePicker.MaximumDate>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="ValidStates">
+                        <VisualState x:Name="Valid">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Black" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </DatePicker>
+
+            <Label x:Name="labelTime" Text="Выберите время" FontSize="Medium" Margin = "0, 30, 0, 0"/>
+            <TimePicker x:Name="timePicker" Time="17:00:00" PropertyChanged="TimePicker_PropertyChanged" TextColor =" Black">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="ValidStates">
+                        <VisualState x:Name="Valid">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Black" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </TimePicker>
+
+            <Label Text="Установите громкость сигнала будильника" FontSize="Medium" Margin = "0, 30, 0, 0" />
+            <Label x:Name="labelSlider" Text="Выбрано 5:" FontSize="Medium" />
+
+
+            <Slider  x:Name="sliderControl"  Minimum="0" Maximum="10" Value="5" ValueChanged="slider_ValueChanged"  
+            MinimumTrackColor="DodgerBlue" MaximumTrackColor="Gray" ThumbColor="DodgerBlue" />
+
+            <Label Text="Повторять каждый день:" FontSize="Medium" Margin = "0, 30, 0, 0"/>
+            <Label x:Name="labelSwitch" Text="Да" FontSize="Medium" />
+
+            <Switch x:Name="switchControl" IsToggled="true"  HorizontalOptions="Center" Toggled= "switcher_Toggled" ThumbColor = "DodgerBlue" OnColor = "LightSteelBlue" />
+
+            <Button Text = "Сохранить" FontSize="Medium"
+        HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+        Clicked="OnButtonClicked" BackgroundColor = "Silver" />
+
+            <Label x:Name="labelSave" FontSize="Medium" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,7 +11,7 @@ namespace HomeApp
         {
             InitializeComponent();
 
-            MainPage = new ClimatePage(); 
+            MainPage = new AlarmPage(); //new ClimatePage(); 
         }
 
         protected override void OnStart()
